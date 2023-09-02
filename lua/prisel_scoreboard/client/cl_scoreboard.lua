@@ -1,14 +1,3 @@
-/*
-* -------------------------
-* • Fichier: cl_scoreboard.lua
-* • Projet: client
-* • Création : Friday, 14th July 2023 8:40:53 pm
-* • Auteur : Ekali
-* • Modification : Friday, 14th July 2023 8:40:53 pm
-* • Destiné à Prisel.fr en V3
-* -------------------------
-*/
-
 local scoreboardFrame
 local iscrolled = 0
 
@@ -30,7 +19,8 @@ function Prisel.Scoreboard.Open()
   scoreboardFrame:Center()
   scoreboardFrame:SetTitle("")
   scoreboardFrame:ShowCloseButton(false)
-  scoreboardFrame:SetTitle("Scoreboard - Prisel.fr")
+  scoreboardFrame:SetTitle("LeDarkRP - Prisel.fr")
+  scoreboardFrame:SetDescription("discord.gg/prisel - © 2016 - 2023")
   scoreboardFrame:MakePopup()
   
   local panelSrc = vgui.Create("DPanel", scoreboardFrame)
@@ -130,7 +120,7 @@ function Prisel.Scoreboard.Open()
 
       local jobName = vgui.Create("DLabel", panel)
       jobName:SetSize(DarkRP.ScrW * 0.11, panel:GetTall())
-      jobName:SetText(v:getDarkRPVar("job"))
+      jobName:SetText(v:getDarkRPVar("job") or "N/A")
       jobName:SetFont(DarkRP.Library.Font(12, 0, "Montserrat Bold"))
       jobName:SetTextColor(v:getJobTable().color)
       jobName:SetPos(playerAvatar:GetWide() + DarkRP.ScrW * 0.11, panel:GetTall()/2 - jobName:GetTall()/2)
